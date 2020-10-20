@@ -1,0 +1,171 @@
+@import url("https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap");
+body {
+	background: linear-gradient(hsl(273, 75%, 66%), hsl(240, 73%, 65%));
+	display: flex;
+	margin: 0;
+	width: 100vw;
+	height: 100vh;
+}
+main {
+	place-self: center;
+	margin: 0 auto;
+}
+#card {
+	display: flex;
+	background: #ffffff;
+	border-radius: 20px;
+	width: 70vw;
+	box-sizing: border-box;
+}
+.side-img {
+	width: 55%;
+	background-image: url(../images/bg-pattern-desktop.svg);
+	background-position-x: 100%;
+	background-position-y: 70%;
+	position: relative;
+}
+.mobile {
+	display: none;
+}
+.desktop {
+	overflow: hidden;
+	padding-top: 4em;
+	height: 510px;
+	box-sizing: border-box;
+}
+.desktop .woman {
+	margin-left: -5em;
+}
+.desktop .box {
+	position: absolute;
+	left: -6em;
+	bottom: 24%;
+}
+h1 {
+	font-family: "Kumbh Sans", sans-serif;
+	font-size: 2em;
+	font-weight: 700;
+	color: hsl(238, 29%, 16%);
+}
+hr {
+	background-color: hsl(240, 5%, 91%);
+	border: none;
+	height: 1px;
+}
+.faq {
+	width: 55%;
+	padding: 2em 3em 4em 5em;
+}
+.title {
+	display: flex;
+	position: relative;
+}
+input[type="radio"] {
+	cursor: pointer;
+	appearance: none;
+}
+
+.q {
+	font-family: "Kumbh Sans", sans-serif;
+	font-size: 12px;
+	font-weight: 400;
+	position: relative;
+	padding: 1.5em 0;
+}
+label {
+	cursor: pointer;
+	color: hsl(237, 12%, 33%);
+	position: absolute;
+	left: 0;
+	transition: color 0.2s linear;
+}
+label:hover {
+	color: hsl(14, 88%, 65%);
+}
+.a {
+	display: none;
+	opacity: 0;
+	line-height: 1.5em;
+}
+.a p {
+	color: hsl(240, 6%, 50%);
+}
+.collapse {
+	position: absolute;
+	right: 0;
+	margin: 0;
+}
+.collapse::before {
+	content: url("../images/icon-arrow-down.svg");
+}
+input[type="radio"]:checked {
+	transform: rotateX(180deg);
+	transition: all 0.2s linear;
+}
+input[type="radio"]:checked + label {
+	font-size: 14px;
+	font-weight: 700;
+	color: hsl(238, 29%, 16%);
+}
+input[type="radio"]:checked + label + p {
+	margin: 0;
+	animation: toggle 0.5s forwards;
+	display: block;
+	padding-top: 1em;
+	padding-right: 1em;
+}
+@keyframes toggle {
+	0% {
+		margin-top: 0;
+	}
+	30% {
+		opacity: 0;
+	}
+	100% {
+		margin-top: 2em;
+		opacity: 1;
+	}
+}
+/* @media screen and (max-width: 1120px) {
+	#card {
+		width: 720px;
+	}
+} */
+@media screen and (max-width: 1120px) {
+	.desktop {
+		display: none;
+	}
+	#card {
+		width: 80vw;
+		flex-direction: column;
+		position: relative;
+	}
+	.side-img {
+		width: auto;
+		background-image: url(../images/bg-pattern-mobile.svg);
+		place-self: center;
+		background-size: 100%;
+		background-repeat: no-repeat;
+		background-position: bottom;
+		top: -6em;
+		padding-bottom: 1em;
+		position: absolute;
+	}
+	.mobile {
+		display: block;
+	}
+	.mobile .woman {
+		width: 100%;
+		max-width: 50vw;
+		margin-left: -1em;
+	}
+	.faq {
+		width: 100%;
+		box-sizing: border-box;
+		padding: 2em;
+		padding-top: 6em;
+	}
+	.faq h1 {
+		text-align: center;
+	}
+}
